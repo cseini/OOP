@@ -2,8 +2,8 @@ package ui;
 import javax.swing.JOptionPane;
 import domain.BMI;
 import domain.Grade;
-import domain.Salary;
 import domain.Lotto;
+import domain.Salary;
 /*
  * 로또 결과화면
  * 얼마치를 구입하십니까?
@@ -44,7 +44,7 @@ public class Main {
 		Grade grade = null;
 		Salary[] salaryArr = new Salary[10];
 		Salary salary = null;
-		Lotto lotto=new Lotto();
+		Lotto lotto = new Lotto();
 		int count = 0, gradeCount = 0, salCount=0;;
 		while(true) {
 			switch((Butt)JOptionPane.showInputDialog(
@@ -117,13 +117,13 @@ public class Main {
 				JOptionPane.showMessageDialog(null,salOutput);
 				break;
 			case INPUT_LOTTO:
+				lotto = new Lotto();
 				lotto.setMoney(Integer.parseInt(JOptionPane.showInputDialog("얼마치를 구입하십니까?")));
-				lotto.setMany();
-				lotto.setBall();
+				lotto.setResult();
+				
 			break;
 			case OUTPUT_LOTTO:
-				lotto.setResult();
-				JOptionPane.showMessageDialog(null, lotto.getMoney() + "\n" + lotto.getResult());
+				JOptionPane.showMessageDialog(null, lotto.getMoney() + "원 구매\n" + lotto.getResult());
 			break;
 			default: break;
 			}

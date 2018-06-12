@@ -7,39 +7,38 @@ package domain;
  * 출력은[5,23,23,40,19,22]
  * */
 public class Lotto {
-	int money, many;
-	String result;
-	int[][] ball = new int[5][6];
+	int money;
+	String result,ballSelect;
+	int[] ballNum;
 	public void setMoney(int money) {
 		this.money=money;
 	}
-	public void setMany() {
-		this.many=money/1000;
-	}
 	public void setBall() {
-		for(int i=0;i<many;i++) {
+		ballNum = new int[6];
+		ballSelect="";
+		for(int i=0;i<6;i++) {
+			ballNum[i]=(((int)(Math.random()*45))+1);
 			for(int j=0;j<6;j++) {
-				ball[i][j]=(((int)(Math.random()*45))+1);
+				if(ballNum[i]==ballNum[j]) {
+					ballNum[i]=(((int)(Math.random()*45))+1);
+				}
 			}
+			ballSelect+=ballNum[i]+" ";
 		}
 	}
 	public void setResult() {
-		result = "";
-		for(int i=0;i<many;i++) {
-			for(int j=0;j<6;j++) {
-				result += String.format("%d  ",ball[i][j]);
+		result="";
+		for(int i=0;i<money/1000;i++) {
+			setBall();
+			result+= ballSelect+"\n";
 			}
-			result += "\n";
-		}
 	}
 	public int getMoney() {
 		return money;
 	}
-	public int getMany() {
-		return many;
-	}
-	public int[][] getBall() {
-		return ball;
+
+	public int[] getBall() {
+		return ballNum;
 	}
 	public String getResult() {
 		return result;
