@@ -19,6 +19,8 @@ public class Account {
 		this.money=money;
 	}
 	public void setName(String name) {
+		setAccountNo();
+		setCreateDate();
 		this.name=name;
 	}
 	public void setUid(String uid) {
@@ -31,16 +33,18 @@ public class Account {
 		date = new Date();
 		sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
 		createDate=sdf.format(date);
+
 	}
 	public void setRandomNum() {
-		this.randomNum=String.format("%03d",(int)(Math.random()*1000));
+		this.randomNum=String.format("%03d",(int)(Math.random()*999)+1);
 	}
 	public void setAccountNo() {
-		accountNo="";
+		String accountNo="";
 		for(int i=0;i<3;i++) {
 			setRandomNum();
 			accountNo += (i!=2)?randomNum+"-":randomNum;
 		}
+		this.accountNo=accountNo;
 	}
 	public int getMoney() {
 		return money;

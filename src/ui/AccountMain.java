@@ -48,8 +48,6 @@ public class AccountMain {
 				account.setUid(JOptionPane.showInputDialog("사용 ID"));
 				account.setPass(JOptionPane.showInputDialog("password"));
 				account.setMoney(Integer.parseInt(JOptionPane.showInputDialog("입금하시겠습니까?")));
-				account.setAccountNo();
-				account.setCreateDate();
 				JOptionPane.showMessageDialog(null, account.toString());
 				break;
 			case MINUS_ACCOUNT:
@@ -58,8 +56,6 @@ public class AccountMain {
 				mAccount.setUid(JOptionPane.showInputDialog("사용 ID"));
 				mAccount.setPass(JOptionPane.showInputDialog("password"));
 				mAccount.setDebt(Integer.parseInt(JOptionPane.showInputDialog("대출받으겠습니까?")));
-				mAccount.setAccountNo();
-				mAccount.setCreateDate();
 				JOptionPane.showMessageDialog(null, mAccount.toString());
 				break;
 			default: break;
