@@ -98,16 +98,14 @@ public class Main {
 				JOptionPane.showMessageDialog(null, gradeOutput);
 			break;
 			case INPUT_SALARY:
-				salary = new Salary();
+				/*salary = new Salary();
 				salary.setDept(JOptionPane.showInputDialog("부서"));
 				salary.setName(JOptionPane.showInputDialog("성명"));
 				salary.setSal(Integer.parseInt(JOptionPane.showInputDialog("본봉")));
-				salary.setBonus(Integer.parseInt(JOptionPane.showInputDialog("수당")));
-				salary.setTotal();
-				String salResult=String.format("| %s | %s | %d | %d | %d | \n",salary.getDept(),salary.getName(),salary.getSal(),salary.getBonus(),salary.getTotal());
+				String salResult=String.format("| %s | %s | %d | %d | %d | \n",salary.getDept(),salary.getName(),salary.getSal());
 				JOptionPane.showMessageDialog(null, salResult);
 				salaryArr[salCount]=salary;
-				salCount++;
+				salCount++;*/
 				break;
 			case OUTPUT_SALARY:
 				String salOutput ="";

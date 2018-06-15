@@ -1,39 +1,27 @@
 package domain;
 
 public class Salary {
-	String dept, name;
-	int sal, bonus, total;
-	public void setDept(String dept){
-		this.dept=dept;
+	public static final String DEPT= "인턴쉽";
+	protected String dept, name;
+	protected int sal;
+	public Salary(String name, int sal) {
+		this.name=name.substring(0,1)+"인턴";
+		this.sal=sal;
+		setDept(DEPT);
 	}
-	public void setName(String name) {
-		this.name=name;
+	public void setDept(String dept) {
+		this.dept=dept;
 	}
 	public void setSal(int sal) {
 		this.sal=sal;
 	}
-	public void setBonus(int bonus) {
-		this.bonus=bonus;
-	}
-	public void setTotal() {
-		total=sal+bonus;
-	}
 	public String getDept() {
 		return dept;
-	}
-	public String getName() {
-		return name;
 	}
 	public int getSal() {
 		return sal;
 	}
-	public int getBonus() {
-		return bonus;
-	}
-	public int getTotal() {
-		return total;
-	}
 	public String toString() {
-		return String.format("| %s | %s | %d | %d | %d |",dept,name,sal,bonus,total);
+		return String.format("부서 : %s 이름 : %s 본봉 : %d만원 지급",dept,name,sal);
 	}
 }
